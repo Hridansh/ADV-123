@@ -33,9 +33,7 @@ function gotPoses(result){
         left_wrist_x = result[0].pose.leftWrist.x;
         right_wrist_x = result[0].pose.rightWrist.x;
 
-        difference = left_wrist_x - right_wrist_x;
-        difference.floor(point);
-        final_answer = difference;
+        difference =floor(left_wrist_x - right_wrist_x);
         console.log("left wrist x = " + left_wrist_x + ", right wrist x = " + right_wrist_x + ", difference = " + difference);
     }
 }
@@ -44,7 +42,7 @@ function draw(){
     background('#969A97');
 
     document.getElementById("square_side").innerHTML = "Width and Height of the name will be = " + difference + "px"
-    textSize(final_answer);
+    textSize(difference);
     text('Hridansh', nose_x, nose_y);
     fill(245, 245, 245);
 }
